@@ -1,0 +1,22 @@
+server:
+  port: 10000
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+    discovery:
+      client:
+        simple:
+          instances:
+            aplikasi:
+            - uri: http://localhost:10001
+            #- uri: http://192.168.100.14:10002
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: debug
