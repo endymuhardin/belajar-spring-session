@@ -5,8 +5,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Data User</title>
+
+  <script>
+    function setFocusToTextBox(){
+      document.getElementById("data").focus();
+    }
+  </script>
+
 </head>
-<body>
+<body onload="setFocusToTextBox()">
 
   <h1>User : <span sec:authentication="name">Bob</span></h1>
 
@@ -14,10 +21,13 @@
     <input type="submit" value="Logout" />
   </form>
 
+  <div th:text="${'Backend IP : '+ localAddress }">Local IP</div>
+  <div th:text="${'Backend Port : '+ localPort }">Local Port</div>
+
   <hr>
 
   <form method="post" th:action="@{/sessiondata/save}">
-    Input Data : <input name="data"> <input type="submit" value="Save">
+    Input Data : <input name="data" id="data"> <input type="submit" value="Save">
   </form>
 
   <hr>

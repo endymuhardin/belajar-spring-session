@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Host Info</title>
+</head>
+<body>
+    <h1>Host Info</h1>
+    <div th:text="${'Backend IP : '+ localAddress }">Local IP</div>
+    <div th:text="${'Backend Port : '+ localPort }">Local Port</div>
+    <a th:href="@{/sessiondata/list}">Isi data dalam session</a>
+</body>
+</html>

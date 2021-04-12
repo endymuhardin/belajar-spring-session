@@ -1,8 +1,10 @@
 package com.muhardin.endy.belajar.spring.session.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +18,10 @@ public class UserDataController {
     }
 
     @GetMapping("/list")
-    public void displayData() {}
+    public void displayData(Model model, HttpServletRequest request) {
+        model.addAttribute("localAddress", request.getLocalAddr())
+                .addAttribute("localPort", request.getLocalPort());
+    }
 
     @PostMapping("/save")
     public String saveData(@RequestParam String data, @ModelAttribute("userdata") List<String> userdata) {
