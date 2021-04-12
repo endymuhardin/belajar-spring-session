@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Data User</title>
+</head>
+<body>
+
+  <h1>User : <span sec:authentication="name">Bob</span></h1>
+
+  <form th:action="@{/logout}" method="post" name="logoutForm">
+    <input type="submit" value="Logout" />
+  </form>
+
+  <hr>
+
+  <form method="post" th:action="@{/sessiondata/save}">
+    Input Data : <input name="data"> <input type="submit" value="Save">
+  </form>
+
+  <hr>
+
+  <h2>Data User</h2>
+
+  <form method="post" th:action="@{/sessiondata/clear}">
+    <input type="submit" value="Clear Data">
+  </form>
+
+  <div th:if="${#lists.isEmpty(userdata)}">
+    Tidak ada data
+  </div>
+
+  <ul th:unless="${#lists.isEmpty(userdata)}">
+    <li th:each="d : ${userdata}" th:text="${d}">Data 1</li>
+  </ul>
+</body>
+</html>
