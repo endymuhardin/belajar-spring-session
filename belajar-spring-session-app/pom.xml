@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.muhardin.endy.belajar</groupId>
-	<artifactId>belajar-spring-session</artifactId>
+	<artifactId>belajar-spring-session-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>belajar-spring-session</name>
-	<description>Demo project for Spring Boot</description>
+	<name>belajar-spring-session-app</name>
+	<description>Belajar Spring Session - Aplikasi</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
